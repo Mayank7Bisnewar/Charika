@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: charika
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/charika
+      JWT_SECRET_KEY: "change-me"
+      GOOGLE_MAPS_API_KEY: "YOUR_GOOGLE_MAPS_API_KEY"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
