@@ -1,0 +1,8 @@
+aws_region = "us-east-1"
+vpc_cidr = "10.0.0.0/16"
+db_instance_class = "db.t4g.micro"
+db_database_name = "charika"
+db_username = "postgres"
+jwt_secret_key = "replace-with-strong-secret"
+google_maps_api_key = "YOUR_GOOGLE_MAPS_API_KEY"
+desired_count = 1
