@@ -18,12 +18,11 @@ class _ConfirmRideScreenState extends State<ConfirmRideScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Confirm Ride"),
-      ),
+      ), // <-- Ye raha aapka added comma
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-
             /// Map Placeholder
             Container(
               height: 220,
@@ -106,16 +105,16 @@ class _ConfirmRideScreenState extends State<ConfirmRideScreen> {
 
             const Spacer(),
 
-          PrimaryButton(
-  text: "Confirm Ride",
-  onPressed: () {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text("Ride Confirmed Successfully 🚖"),
-      ),
-    );
-  },
-),
+            PrimaryButton(
+              text: "Confirm Ride",
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Ride Confirmed Successfully 🚖"),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
